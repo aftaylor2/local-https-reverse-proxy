@@ -1,0 +1,46 @@
+# add git-ignore syntax here of things you don't want copied into docker image
+
+######################
+#       Docker       #
+######################
+.dockerignore
+*Dockerfile*
+*docker-compose*
+
+######################
+#       Project      #
+######################
+makefile
+README.md
+
+######################
+# OS generated files #
+######################
+.DS_Store
+._.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+######################
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+######################
+# Editor Backup File #
+######################
+*~
+*.bak
+*.swp
+*.swo
+
+######################
+#   Version Control  #
+######################
+.git
+.svn
