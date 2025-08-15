@@ -11,6 +11,9 @@ LABEL name="local-https-reverse-proxy" \
   org.opencontainers.image.authors="Andrew Taylor <aftaylor2@gmail.com>" \
   org.opencontainers.image.licenses="MIT"
 
+# Expose ports for HTTP and HTTPS
+EXPOSE 80 443
+
 # Remove the default nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
 
@@ -23,9 +26,6 @@ WORKDIR /etc/nginx/ssl
 # Copy locally generated SSL certificates
 COPY certs/localhost.crt /etc/nginx/ssl/
 COPY certs/localhost.key /etc/nginx/ssl/
-
-# Expose ports for HTTP and HTTPS
-EXPOSE 80 443
 
 # Start nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
